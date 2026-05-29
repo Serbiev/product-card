@@ -1,0 +1,84 @@
+body {
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  color: #515076;
+}
+
+.product-title {
+  font-size: 70px;
+  font-weight: 400;
+  line-height: 78px;
+  margin: 0;
+  text-align: center;
+  color: #515076; 
+}
+
+.products-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.product-card {
+  box-sizing: border-box;
+  width: 340px;
+  height: 573px;
+  background-color: #F7F7FA;
+  padding: 25px;
+  margin: 45px;
+}
+
+.product-category {
+  font-size: 12px;
+  line-height: 24px;
+  color: #A5A3B9;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+.product-name {
+  width: 220px;
+  height: 27px;
+  font-size: 20px;
+  line-height: 27px;
+  margin-top: 25px;
+}
+
+.product-description {
+  width: 287px;
+  height: 36px;
+  line-height: 18px;
+}
+
+.product-compound {
+  width: 49px;
+  height: 18px;
+  line-height: 18px;
+}
+
+.product-compound-Ingredients {
+  height: 18px;
+  left: 125px;
+  line-height: 18px;
+}
+
+.product-price {
+  width: 56px;
+  height: 24px;
+  line-height: 24px;
+  font-size: 20px;
+}
+
+.product-price-value {
+  width: 73px;
+  height: 24px;
+  line-height: 24px;
+  font-size: 20px;
+}
+
+.name-n {
+  width: 251px;
+  height: 27px;
+  font-size: 20px;
+  line-height: 27px;
+}
