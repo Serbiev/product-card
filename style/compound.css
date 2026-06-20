@@ -1,0 +1,12 @@
+.compound__name {
+  display: block;
+  padding-bottom: 5px;
+}
+
+
+.compound__list li {
+  padding-left: 3px;
+  margin-bottom: 5px;
+  list-style-position: inside;
+}
+
