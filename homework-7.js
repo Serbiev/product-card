@@ -32,8 +32,8 @@ function buyBudget(budget) {
   }
 }
 
-buyBudgetBudget(4000)
-buyBudgetBudget(2790)
+buyBudget(4000)
+buyBudget(2790)
 
 
 function greetBrother() {
