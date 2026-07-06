@@ -24,7 +24,7 @@ checkSpeed(299792458)
 let macBook = 'MacBook Pro'
 let priceMacBook = 3090
 
-function checkBudget(budget) {
+function buyBudget(budget) {
   if (budget >= priceMacBook) {
     console.log(`${macBook} приобретён. Спасибо за покупку!`)
   } else {
@@ -32,8 +32,8 @@ function checkBudget(budget) {
   }
 }
 
-checkBudget(4000)
-checkBudget(2790)
+buyBudgetBudget(4000)
+buyBudgetBudget(2790)
 
 
 function greetBrother() {
