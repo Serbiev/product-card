@@ -2,10 +2,9 @@ import { postComments } from "./comments.js";
 
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
+const byNumberFilter = numbers.filter(number => number >= 5);
 
-const numberFilter = numbers.filter(number => number >= 5);
-
-console.log(numberFilter);
+console.log(byNumberFilter);
 
 
 const movies = [
@@ -28,48 +27,49 @@ console.log(reverseArray(numbers))
 console.log(reverseArray(movies))
 
 
-const outputComentCom = postComments.filter(com => com.email.includes('.com'))
-console.log(outputComentCom)
+const commentsWithComEmail = postComments.filter(com => com.email.includes('.com'))
+console.log(commentsWithComEmail)
 
 
-const remappedComments = postComments.map(com => {
+const commentsUpdatedId = postComments.map(com => {
   return {
     ...com,
     postId: com.id <= 5 ? 2 : 1
   };
 })
-console.log(remappedComments)
+console.log(commentsUpdatedId)
 
 
-const shortComments = postComments.map(com => {
+const commentNames = postComments.map(com => {
   return {
     id: com.id,
     name: com.name
   };
 });
 
-console.log(shortComments);
+console.log(commentNames);
 
 
-const commentsWithFlag = postComments.map(com => {
+const validatedComments = postComments.map(com => {
   return {
     ...com,
     isInvalid: com.body.length > 180
   };
 });
 
-console.log(commentsWithFlag);
+console.log(validatedComments);
 
 
-const emailsReduce = postComments.reduce((acc, com) => {
+const byReduce = postComments.reduce((acc, com) => {
   acc.push(com.email);
   return acc;
 }, []);
 
-console.log(emailsReduce);
+console.log(byReduce);
 
-const emailsMap = postComments.map(com => com.email);
-console.log(emailsMap);
 
-console.log(emailsMap.toString());
-console.log(emailsMap.join(', '));
+const byMap = postComments.map(com => com.email);
+console.log(byMap);
+
+console.log(byMap.toString());
+console.log(byMap.join(', '));
