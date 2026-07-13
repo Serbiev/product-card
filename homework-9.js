@@ -2,9 +2,9 @@ import { postComments } from "./comments.js";
 
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-const byNumberFilter = numbers.filter(number => number >= 5);
+const filteredByFive = numbers.filter(number => number >= 5);
 
-console.log(byNumberFilter);
+console.log(filteredByFive);
 
 
 const movies = [
@@ -60,16 +60,16 @@ const validatedComments = postComments.map(com => {
 console.log(validatedComments);
 
 
-const byReduce = postComments.reduce((acc, com) => {
+const commentEmailByReduce = postComments.reduce((acc, com) => {
   acc.push(com.email);
   return acc;
 }, []);
 
-console.log(byReduce);
+console.log(commentEmailByReduce);
 
 
-const byMap = postComments.map(com => com.email);
+const commentsByMap = postComments.map(com => com.email);
 console.log(byMap);
 
-console.log(byMap.toString());
-console.log(byMap.join(', '));
+console.log(commentsByMap.toString());
+console.log(commentsByMap.join(', '));
