@@ -103,3 +103,8 @@ body {
 .color-toggle-button--active {
   background-color: #C2DECB;
 }
+
+.border-button {
+  border-radius: 30px;
+  background-color: #D4C9E8;
+}
