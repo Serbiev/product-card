@@ -6,12 +6,12 @@ const productList = document.querySelector('#product-list')
 function renderProducts(productsArray) {
   productsArray.forEach(card => {
     const productClone = productTemplate.content.cloneNode(true);
-    productClone.querySelector('.card__image').src = card.image;
+    productClone.querySelector('.card__image').src = `images/${card.image}.png`;
     productClone.querySelector('.card__image').alt = card.name;
     productClone.querySelector('.card__category').textContent = card.category;
     productClone.querySelector('.card__name').textContent = card.name;
     productClone.querySelector('.card__description').textContent = card.description;
-    productClone.querySelector('.card__value').textContent = card.price;
+    productClone.querySelector('.card__value').textContent = `${card.price.toLocaleString('ru-RU')} ₽`;
 
     const compoundList = productClone.querySelector('.compound__list');
     compoundList.innerHTML = '';
@@ -25,22 +25,23 @@ function renderProducts(productsArray) {
   });
 }
 
-const productDescriptions = products.reduce((acc, product) => {
-  acc[product.name] = product.description;
-  return acc;
-}, {});
+const productDescriptions = products.reduce((array, product) => {
+  array.push({ [product.name]: product.description });
+  return array;
+}, []);
 
 console.log(productDescriptions);
 
 function getCardsCount() {
-  let count = prompt('Сколько карточек отобразить? От 1 до 5');
+  let count = Number(prompt('Сколько карточек отобразить? От 1 до 5'));
 
-  while (count < 1 || count > 5 || isNaN(count) || count === null) {
-    count = prompt('Введите число от 1 до 5');
+  while (!count || count < 1 || count > 5) {
+    count = Number(prompt('Введите число от 1 до 5'));
   }
 
-  return Number(count);
+  return count;
 }
+
 
 const cardsCount = getCardsCount();
 const productsToShow = products.slice(0, cardsCount);
