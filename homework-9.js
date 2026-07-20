@@ -69,7 +69,7 @@ console.log(commentEmailByReduce);
 
 
 const commentsByMap = postComments.map(com => com.email);
-console.log(byMap);
+console.log(commentsByMap);
 
 console.log(commentsByMap.toString());
 console.log(commentsByMap.join(', '));
