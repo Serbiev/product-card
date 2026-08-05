@@ -3,8 +3,8 @@ import { products } from "./products.js";
 const productTemplate = document.querySelector('#product-template')
 const productList = document.querySelector('#product-list')
 
-function renderProducts(productsArray) {
-  productsArray.forEach(card => {
+function renderProducts(productArray) {
+  productArray.forEach(card => {
     const productClone = productTemplate.content.cloneNode(true);
     productClone.querySelector('.card__image').src = `images/${card.image}.png`;
     productClone.querySelector('.card__image').alt = card.name;
@@ -33,7 +33,8 @@ const productDescriptions = products.reduce((array, product) => {
 console.log(productDescriptions);
 
 function getCardsCount() {
-  let count = Number(prompt('Сколько карточек отобразить? От 1 до 5'));
+  const countString = prompt('Сколько карточек отобразить? От 1 до 5');
+  let count = Number(countString);
 
   while (!count || count < 1 || count > 5) {
     count = Number(prompt('Введите число от 1 до 5'));
