@@ -1,48 +1,52 @@
-const emailForm = document.querySelector('#email-form')
+const getFormData = (form) => {
+  const formData = new FormData(form);
+  return Object.fromEntries(formData.entries());
+};
+
+
+const emailForm = document.querySelector('#email-form');
 emailForm.addEventListener('submit', (event) => {
-  event.preventDefault()
-  const form = event.target
-  const formData = new FormData(form)
-  const dataEmail = Object.fromEntries(formData.entries())
-  console.log(dataEmail)
-})
+  event.preventDefault();
+  const dataEmail = getFormData(event.target);
+  console.log(dataEmail);
+});
 
-
-const modal = document.querySelector('.modal')
-const overlay = document.querySelector('.overlay')
-const registrationButton = document.querySelector('#registration-button')
-const buttonCloseModal = document.querySelector('#button-close-modal')
+const modal = document.querySelector('.modal');
+const overlay = document.querySelector('.overlay');
+const registrationButton = document.querySelector('#registration-button');
+const buttonCloseModal = document.querySelector('#button-close-modal');
 
 registrationButton.addEventListener('click', () => {
-  modal.classList.add('modal-showed')
-  overlay.classList.add('overlay-showed')
-})
+  modal.classList.add('modal-showed');
+  overlay.classList.add('overlay-showed');
+});
 
 buttonCloseModal.addEventListener('click', () => {
-  modal.classList.remove('modal-showed')
-  overlay.classList.remove('overlay-showed')
-})
+  modal.classList.remove('modal-showed');
+  overlay.classList.remove('overlay-showed');
+});
 
-const registrationForm = document.querySelector('#registration-form')
-let user = null
+const registrationForm = document.querySelector('#registration-form');
 
 registrationForm.addEventListener('submit', (event) => {
-  event.preventDefault()
-
-  const formRegistration = event.target
-  const formData = new FormData(formRegistration)
-  const data = Object.fromEntries(formData.entries())
-  const isValid = formRegistration.checkValidity()
-  const password = data.password
-  const repeatPassword = data.repeatPassword
-
+  event.preventDefault();
+  
+  const formRegistration = event.target;
+  const data = getFormData(formRegistration);
+  const isValid = formRegistration.checkValidity();
+  
+  const password = data.password;
+  const repeatPassword = data.repeatPassword;
+  let user = null;
+  
   if (password !== repeatPassword || !isValid) {
-    alert('Регистрация отклонена, заполните все поля корректно!')
+    alert('Регистрация отклонена, заполните все поля корректно!');
   } else {
-    data.createdOn = new Date()
-    user = data
-    console.log(user)
-    modal.classList.remove('modal-showed')
-    overlay.classList.remove('overlay-showed')
+    data.createdOn = new Date();
+    user = data;
+    console.log(user);
+    
+    modal.classList.remove('modal-showed');
+    overlay.classList.remove('overlay-showed');
   }
-})
+});
