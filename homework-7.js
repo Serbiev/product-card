@@ -42,7 +42,6 @@ function greetBrother() {
 
 greetBrother()
 
-
 const GOLDEN_RATIO = 1.61803
 let shareNividia = 194.83
 let cheetahSpeed = 120
