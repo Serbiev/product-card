@@ -1,8 +1,10 @@
+import { Form } from './form.js';
+import { Modal } from './modal.js';
+
 const getFormData = (form) => {
   const formData = new FormData(form);
   return Object.fromEntries(formData.entries());
 };
-
 
 const emailForm = document.querySelector('#email-form');
 emailForm.addEventListener('submit', (event) => {
@@ -11,42 +13,33 @@ emailForm.addEventListener('submit', (event) => {
   console.log(dataEmail);
 });
 
-const modal = document.querySelector('.modal');
-const overlay = document.querySelector('.overlay');
+const registrationModal = new Modal('modal');
+
 const registrationButton = document.querySelector('#registration-button');
-const buttonCloseModal = document.querySelector('#button-close-modal');
-
 registrationButton.addEventListener('click', () => {
-  modal.classList.add('modal-showed');
-  overlay.classList.add('overlay-showed');
+  registrationModal.openModal();
 });
 
-buttonCloseModal.addEventListener('click', () => {
-  modal.classList.remove('modal-showed');
-  overlay.classList.remove('overlay-showed');
-});
+const registrationForm = new Form('registration-form');
 
-const registrationForm = document.querySelector('#registration-form');
-
-registrationForm.addEventListener('submit', (event) => {
+registrationForm.form.addEventListener('submit', (event) => {
   event.preventDefault();
-  
-  const formRegistration = event.target;
-  const data = getFormData(formRegistration);
-  const isValid = formRegistration.checkValidity();
-  
+
+  const data = registrationForm.getFormData();
+  const isValid = registrationForm.isValid();
+
+  let user = null;
   const password = data.password;
   const repeatPassword = data.repeatPassword;
-  let user = null;
-  
+
   if (password !== repeatPassword || !isValid) {
     alert('Регистрация отклонена, заполните все поля корректно!');
   } else {
     data.createdOn = new Date();
     user = data;
     console.log(user);
-    
-    modal.classList.remove('modal-showed');
-    overlay.classList.remove('overlay-showed');
+
+    registrationModal.closeModal();
+    registrationForm.resetForm();
   }
 });
