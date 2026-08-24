@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "name": "Abubakr",
+    "surname": "Serbiev",
+    "email": "serbievabubakr73@gmail.com",
+    "age": 26
+  },
+  {
+    "id": 2,
+    "name": "Anzor",
+    "surname": "Husanov",
+    "email": "anzor.h@gmail.com",
+    "age": 22
+  },
+  {
+    "id": 3,
+    "name": "Deni",
+    "surname": "Baitiev",
+    "email": "deni.b@gmail.com",
+    "age": 29
+  },
+  {
+    "id": 4,
+    "name": "Malik",
+    "surname": "Kimitov",
+    "email": "malik.kim@gmail.com",
+    "age": 24
+  },
+  {
+    "id": 5,
+    "name": "Adam",
+    "surname": "Torshoev",
+    "email": "adam.t@gmail.com",
+    "age": 31
+  }
+]
